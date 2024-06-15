@@ -10,8 +10,8 @@ module.exports = (env, argv) => ({
   // This is necessary because Figma's 'eval' works differently than normal eval
   devtool: argv.mode === 'production' ? false : 'inline-source-map',
   entry: {
-    plugin: './src/plugin.tsx',
-    figma: './src/figma.ts', // This is the entry point for our plugin code.
+    ui: './src/ui.tsx',
+    code: './src/code.ts', // This is the entry point for our plugin code.
   },
   module: {
     rules: [
@@ -44,13 +44,13 @@ module.exports = (env, argv) => ({
     }),
     new HtmlWebpackPlugin({
       inject: 'body',
-      template: './src/plugin.html',
-      filename: 'plugin.html',
-      chunks: ['plugin'],
+      template: './src/ui.html',
+      filename: 'ui.html',
+      chunks: ['ui'],
       cache: false,
     }),
     new HtmlInlineScriptPlugin({
-      htmlMatchPattern: [/plugin.html/],
+      htmlMatchPattern: [/ui.html/],
       scriptMatchPattern: [/.js$/],
     }),
   ],
