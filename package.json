@@ -11,6 +11,12 @@
   },
   "author": "Alex Vong",
   "license": "MIT",
+  "keywords": [
+    "figma plugin",
+    "react",
+    "typescript",
+    "webpack"
+  ],
   "devDependencies": {
     "@figma/eslint-plugin-figma-plugins": "^0.15.0",
     "@figma/plugin-typings": "^1.72.0",

@@ -1,2 +1,1 @@
-npx lint-staged
-npx eslint ./src
+npx lint-staged eslint ./src
